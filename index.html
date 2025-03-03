@@ -3,14 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>En Construcción</title>
-    <style>
-        body { text-align: center; font-family: Arial, sans-serif; padding: 50px; background-color: #f4f4f4; }
-        h1 { font-size: 3rem; color: #333; }
-    </style>
+    <title>🚀 Estamos Construyendo Algo Genial</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>🚧 Página en Construcción 🚧</h1>
-    <p>Estamos trabajando para brindarte la mejor experiencia. ¡Vuelve pronto!</p>
+    <div class="container">
+        <img src="logo.png" alt="Logo de Econet" class="logo">
+        <h1 id="title">🚀 ¡Estamos construyendo algo increíble!</h1>
+        <p class="message">
+            Nuestra web aún está en desarrollo, pero estamos trabajando para traerte la mejor experiencia. <br>
+            🚧 Pronto estaremos listos para despegar. 🌐✨
+        </p>
+
+        <!-- Contador regresivo -->
+        <div class="countdown">
+            <h2>Lanzamiento en:</h2>
+            <div id="timer">
+                <span id="days"></span>D : 
+                <span id="hours"></span>H : 
+                <span id="minutes"></span>M : 
+                <span id="seconds"></span>S
+            </div>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <div class="background-animation"></div>
+
+    <script>
+        // Máquina de escribir
+        const text = "🚀 ¡Estamos construyendo algo increíble!";
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("title").textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        document.getElementById("title").textContent = "";
+        typeWriter();
+
+        // Contador regresivo
+        const launchDate = new Date("2025-05-01T00:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>
