@@ -22,7 +22,8 @@ body {
 }
 
 .logo {
-    width: 350px;
+    width: 320px;
+    margin-top: 3rem;
     margin-bottom: 20px;
     animation: fadeIn 2s ease-in-out;
 }
@@ -50,7 +51,8 @@ button:hover {
 }
 
 #timer {
-    font-size: 3rem;
+    font-size: 2.3rem;
+    margin-top: 1rem;
     font-weight: bold;
     color: #ffcb6b;
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
